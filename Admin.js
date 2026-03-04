@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (!currentUser || currentUser.role !== "admin") {
         alert("Bạn không có quyền truy cập trang này!");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
     }
     document.getElementById("adminEmailDisplay").innerText = currentUser.email;
@@ -112,7 +112,8 @@ function handleLogout() {
     
     if (isConfirmed) {
         localStorage.removeItem("currentUser");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
    
+
 }
