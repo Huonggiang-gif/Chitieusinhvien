@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống Quản trị - Expense Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+    <div class="sidebar">
+        <div class="admin-brand">
+            <div class="avatar-admin">👤</div>
+            <div>
+                <h3>Xin chào, Admin 👋</h3>
+                <p id="adminEmailDisplay">admin@example.com</p>
+            </div>
+        </div>
+        <nav>
+            <a href="#" class="nav-link active" onclick="switchTab('users')">👤 Người dùng</a>
+            <a href="#" class="nav-link" onclick="switchTab('expenses')">💰 Chi tiêu</a>
+            <a href="#" class="nav-link" onclick="switchTab('overview')">📊 Tổng quan</a>
+        </nav>
+        <button class="logout-btn" onclick="handleLogout()">Đăng xuất</button>
+    </div>
+
+    <div class="main-content">
+        <div class="main-header">
+            <h2>Admin Dashboard</h2>
+            <select class="month-picker">
+                <option>Tháng 3, 2026</option>
+            </select>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue">📊</div>
+                <div class="stat-info">
+                    <p>Tổng danh mục</p>
+                    <h3 id="statCategories">0</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange">👤</div>
+                <div class="stat-info">
+                    <p>Người dùng</p>
+                    <h3 id="statUsers">0</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple">💸</div>
+                <div class="stat-info">
+                    <p>Tổng chi tiêu</p>
+                    <h3 id="statTotalMoney">0đ</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>User Management</h3>
+                <input type="text" placeholder="Tìm tên hoặc email..." class="search-input" id="userSearch" onkeyup="loadAdminData()">
+            </div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Tên</th>
+                        <th>Email</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="userList"></tbody>
+            </table>
+        </div>
+
+        <div class="card" style="margin-top: 30px;">
+            <div class="card-header">
+                <h3>Expense Management</h3>
+                <select id="expenseUserFilter" onchange="loadAdminData()">
+                    <option value="all">Tất cả người dùng</option>
+                </select>
+            </div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Người dùng</th>
+                        <th>Danh mục</th>
+                        <th>Số tiền</th>
+                        <th>Ngày</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="expenseList"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="Admin.js"></script>
+</body>
+</html>

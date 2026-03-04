@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="User.js" defer></script>
+    <link rel="stylesheet" href="User.css">
+    <link rel="stylesheet" href="fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-wallet"></i>
+                <h2> Expense Student</h2>
+            </div>
+            <ul class="menu">
+                <li>
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Dashboard</span>
+                </li>
+                
+                <li>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Category</span>
+                </li>
+                
+                <li>
+                    <a href="expense.html"> 
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span>Expense</span>
+                    </a>
+                </li>
+                
+                <li>
+                   <i class="fa-solid fa-bullseye"></i>
+                    <span>Goals</span>
+                </li>
+                
+                <li>
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </li>
+            </ul>
+        </aside>
+        <main class="main">
+            <header class="head">
+                <div class="tile">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="profile">
+                    <h5 id="welcomeUser">Welcome,👋</h5>
+                    <img id="userAvatar" src="" alt="avatar">
+                    <i class="fa-solid fa-bars" id="menuToggle"></i>
+                    <div class="dropdown" id="dropdownmenu">
+                        <p>Setting</p>
+                        <p id="Logout">Logout</p>
+                    </div>
+                </div>
+            </header>
+            <div class="cards">
+                <div class="card">
+                    <i class="fa-solid fa-wallet"></i>
+                    <h5>Tổng chi tháng</h5>
+                    <p id="totalExpense">0đ</p>
+                </div>
+                <div class="card budget-card" onclick="openBudgetModal()">
+                    <i class="fa-solid fa-check"></i>
+                    <h5>Ngân sách</h5>
+                    <p id="budget">0đ</p>
+                </div>
+                <div class="modal" id="budgetModal">
+                    <div class="modal-content">
+                        <h3>Chỉnh sửa ngân sách</h3>
+                        <input type="number" id="budgetInput">
+                        <button onclick="saveBudget()">Lưu</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h5>Vượt ngân sách</h5>
+                    <p id="overcome">0đ</p>
+                </div>
+            </div>
+            <section class="content">
+                <section class="chart">
+                    <div class="char-container">
+                        <h3>Biểu đồ chi tiêu</h3>
+                    </div>
+
+                    <div class="chart-body">
+                        <canvas id="expenseChart"></canvas>
+                    </div>    
+                </section>
+                <section class="goal_section">
+                    <div class="goal_card">
+
+                        <div class="goal_header">
+                            <h3>Mục tiêu tiết kiệm</h3>
+                            <span class="dot_menu">•••</span>
+                        </div>
+
+                        <div class="goal_row">
+                            <span>Mục tiêu</span>
+                            <span id="goalTarget">6,000,000đ</span>
+                        </div>
+                        <div class="modal" id="goalModal">
+                            <div class="modal-content">
+                                <h3>Thiết lập mục tiêu tiết kiệm</h3>
+                                <input type="number" id="goalInput" placeholder="Nhập số tiền mục tiêu">
+                                <button onclick="saveGoalAction()">Lưu mục tiêu</button>
+                                <button onclick="closeGoalModal()" class="btn-cancel">Hủy</button>
+                            </div>
+                        </div>
+                        <div class="goal_row">
+                            <span>Đã tiết kiệm</span>
+                            <span id="goalSaved">4.257.000đ</span>
+                        </div>
+
+                        <div class="progress_bar">
+                            <div class="progress_fill" id="goalProgress"></div>
+                        </div>
+
+                        <div class="goal_section_item">
+                            <div class="bullet pink"></div>
+                            <span class="big_money" id="goalSavedBig">6,000,000đ</span>
+                        </div>
+
+                        <div class="goal_section_item">
+                            <div class="bullet blue"></div>
+                            <span>Tiết kiệm</span>
+                        </div>
+
+                        <div class="progress_bar small">
+                            <div class="progress_fill" id="goalProgressSmall"></div>
+                        </div>
+
+                        <div class="percent_text" id="goalPercent">
+                            70.95% hoàn thành
+                        </div>
+
+                    </div>
+                </section>
+            </section>    
+        </main>
+    </div>
+    <div class="modal" id="budgetModal">
+        <div class="modal-content">
+            <h3>Chỉnh sửa ngân sách</h3>
+            <input type="number" id="budgetInput">
+            <button onclick="saveBudget()">Lưu</button>
+        </div>
+    </div>
+</body>
+</html>

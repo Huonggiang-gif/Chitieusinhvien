@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đăng ký - Quản lý chi tiêu</title>
+<script src="dashboard_user.js" defer></script>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #f4abb4, #fed3dd);
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    width: 420px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+h2 {
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #d67676;
+}
+
+.checkbox {
+    margin-bottom: 18px;
+}
+
+.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.checkbox input {
+    width: 18px;
+    height: 18px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #efb0c9;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #efb0c9;
+}
+
+.message {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.error { color: red; }
+.success { color: green; }
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.login-link a {
+    color: #d67676;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Tạo tài khoản mới</h2>
+
+    <input type="text" id="fullname" placeholder="Họ và tên">
+
+    <input type="email" id="email" placeholder="Email">
+
+    <input type="password" id="password" placeholder="Mật khẩu">
+
+    <input type="password" id="confirm" placeholder="Xác nhận mật khẩu">
+
+    <div class="checkbox">
+        <label>
+        <input type="checkbox" id="agree">
+        Tôi đồng ý với điều khoản sử dụng
+        </label>
+    </div>
+
+    <button onclick="register()">Đăng ký tài khoản</button>
+
+    <div id="message" class="message"></div>
+
+    <div class="login-link">
+        Đã có tài khoản? <a href="login.html">Đăng nhập</a>
+    </div>
+</div>
+<script src="register_login.js"></script>
+</body>
+</html>
