@@ -44,7 +44,7 @@ function setupProfile() {
         logoutBtn.onclick = function () {
             if(confirm("Bạn có muốn đăng xuất không?")) {
                 localStorage.removeItem("currentUser");
-                window.location.href = "login.html";
+                window.location.href = "index.html";
             }
         };
     }
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentUser = getCurrentUser();
 
     if (!currentUser) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
     }
 
@@ -446,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentUser = getCurrentUser();
 
     if (!currentUser) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
     }
 
@@ -455,4 +455,5 @@ document.addEventListener("DOMContentLoaded", function () {
     renderExpenses();
     updateGoalUI();
     drawChart(); 
+
 });
