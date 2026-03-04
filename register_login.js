@@ -52,7 +52,7 @@ if (!avatarLink) {
     message.className = "message success";
 
     setTimeout(() => {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }, 1500);
 }
 
@@ -92,7 +92,7 @@ function login() {
         // 4. Chuyển hướng
         if (userData.role === "admin") {
             alert("Đăng nhập Admin thành công!");
-            window.location.href = "admin.html"; 
+            window.location.href = "Admin.html"; 
         } else {
             window.location.href = "User.html";
         }
@@ -102,4 +102,5 @@ function login() {
         errorBox.style.color = "red";
     }
 }
+
 
