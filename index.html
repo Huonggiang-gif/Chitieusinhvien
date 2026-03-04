@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="register_login.js" defer></script>
+    <style>
+        body{
+            margin:0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg,#ff9a9e,#fad0c4);
+        }
+        .login-box{
+            background: white;
+            padding: 40px;
+            width: 350px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .login-box h2{
+            margin-bottom: 20px;
+        }
+
+        .input-group{
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label{
+            font-size: 14px;
+            color:#555;
+        }
+        .input-group input{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.3s;
+        }
+        .input-group:focus{
+            border-color: #ff9a9e;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff9a9e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover{
+            background-color:#cc9b8e;
+        }
+        .register-link a {
+            color: #e2a7bb; /* Màu hồng giống nút bấm của bạn */
+            transition: all 0.3s ease;
+        }
+
+        .register-link a:hover {
+            color: #d18ba3; /* Đậm hơn một chút khi di chuột vào */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Quản lý chi tiêu</h2>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Email">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Password">
+        </div>
+
+        <button onclick="login()">Login</button>
+
+        <div class="error" id="error"></div>
+
+        <div class="register-link" style="margin-top: 20px; text-align: center; font-size: 14px;">
+        Chưa có tài khoản? <a href="register.html" style="color: #e2a7bb; text-decoration: none; font-weight: bold;">Đăng ký ngay</a>
+    </div>  
+    </div>
+    
+</body>
+</html>
