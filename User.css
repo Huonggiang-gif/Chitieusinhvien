@@ -163,12 +163,10 @@ body{
     width: 300px;
 }
 .btn-cancel {
-    background-color: #f0f0f0 !important;
-    color: #333 !important;
+    background-color: #f0f0f0;
+    color: #333;
     margin-top: 10px;
 }
-
-/* Hiệu ứng con trỏ cho các nút mở modal */
 .budget-card, .dot_menu {
     cursor: pointer;
 }
@@ -199,7 +197,6 @@ body{
     border-radius: 6px;
     transition: 0.3s;
 }
-
 .goBack:hover{
     background: #ff9a9e;
 }
@@ -236,7 +233,6 @@ table{
     border-collapse:collapse;
     margin-top: 15px;
 }
-
 th, td{
     padding:12px;
     text-align:center;
@@ -254,7 +250,6 @@ th{
     background:#ffc2d1;
     color:white;
 }
-
 .content{
     display: flex;
     gap: 30px;
@@ -273,14 +268,12 @@ th{
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     height: 500px;
 }
-
 .chart-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-
 .chart-body{
     height: 350px;
 }
@@ -305,24 +298,20 @@ th{
     border-radius: 24px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
-
 .goal_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-
 .goal_header h3 {
     font-size: 18px;
     font-weight: 600;
 }
-
 .dot_menu {
     color: #aaa;
     font-size: 20px;
 }
-
 .goal_row {
     display: flex;
     justify-content: space-between;
@@ -330,7 +319,6 @@ th{
     font-size: 14px;
     color: #555;
 }
-
 .progress_bar {
     height: 10px;
     background: #e8eaf6;
@@ -338,12 +326,10 @@ th{
     overflow: hidden;
     margin: 12px 0 18px;
 }
-
 .progress_bar.small {
     height: 8px;
     margin-top: 10px;
 }
-
 .progress_fill {
     height: 100%;
     width: 0%;
@@ -351,35 +337,30 @@ th{
     border-radius: 50px;
     transition: width 0.6s ease;
 }
-
 .goal_section_item {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 8px;
 }
-
 .bullet {
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
-
 .pink {
     background: #ff758c;
 }
-
 .blue {
     background: #6c8cff;
 }
-
 .big_money {
     font-size: 20px;
     font-weight: 600;
 }
-
 .percent_text {
     margin-top: 10px;
     font-weight: 600;
     color: #ff4f8b;
 }
+
