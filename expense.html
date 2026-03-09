@@ -6,39 +6,84 @@
     <title>Expense</title>
     <script src="User.js" defer></script>
     <link rel="stylesheet" href="User.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <section class="expense-form">
-        <a href="User.html" class="goBack">Dashboard</a>
-        <h2>Quản lý chi tiêu</h2>
-        <form id="addexpense">
-            <select id="category">
-                <option value="">Chọn danh mục</option>
-                <option>Ăn uống</option>
-                <option>Di chuyển</option>
-                <option>Giải trí</option>
-                <option>Khác</option>
-            </select>
-            <input type="number" id="amount" placeholder="Số tiền">
-            
-            <input type="date" id="date">
-
-            <button type="submit">Thêm</button>
-        </form>
-    </section>
-    <section class="expense-list">
-        <h2>Danh sách chi tiêu</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Danh mục</th>
-                    <th>Số tiền</th>
-                    <th>Ngày</th>
-                    <th>Hành động</th>
-                </tr>
-            </thead>
-            <tbody id="expenseTable"></tbody>
-        </table>
-    </section>
+    <div class="dashboard">
+       <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-wallet"></i>
+                <h2> Quản lý chi tiêu</h2>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="User.html">
+                        <i class="fa-solid fa-camera"></i>
+                        <span>Tổng quan</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Danh mục</span>
+                </li>
+                
+                <li>
+                    <a href="expense.html"> 
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span>Chi tiêu</span>
+                    </a>
+                </li>
+                
+                <li>
+                   <i class="fa-solid fa-bullseye"></i>
+                    <span>Mục tiêu</span>
+                </li>
+                
+                <li>
+                    <i class="fa-regular fa-user"></i>
+                    <span>Trang cá nhân</span>
+                </li>
+            </ul>
+        </aside>
+        <div class="main">
+            <div class="profile">
+                <h2>Chi tiêu</h2>
+            </div>
+            <div style="padding: 0 30px;">
+                <section class="expense-form">
+                    <form id="addexpense">
+                        <select id="category">
+                            <option value="">Chọn danh mục</option>
+                            <option>Ăn uống</option>
+                            <option>Di chuyển</option>
+                            <option>Giải trí</option>
+                            <option>Khác</option>
+                        </select>
+                        <input type="number" id="amount" placeholder="Số tiền">
+                        
+                        <input type="date" id="date">
+                        <textarea id="note" placeholder="Ghi chú"></textarea>
+                        <button type="submit" id="submitBtn">Thêm</button>
+                    </form>
+                </section>
+                <section class="expense-list">
+                    <h2>Danh sách chi tiêu</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Danh mục</th>
+                                <th>Số tiền</th>
+                                <th>Ngày</th>
+                                <th>Ghi chú</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expenseTable"></tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
