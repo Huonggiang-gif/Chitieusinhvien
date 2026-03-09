@@ -44,7 +44,7 @@ function setupProfile() {
         logoutBtn.onclick = function () {
             if(confirm("Bạn có muốn đăng xuất không?")) {
                 localStorage.removeItem("currentUser");
-                window.location.href = "index.html";
+                window.location.href = "login.html";
             }
         };
     }
@@ -146,7 +146,10 @@ function saveBudget() {
         alert("Phải nhập số");
         return;
     }
-
+    if (amount <= 0) {
+        alert("Số tiền ngân sách phải lớn hơn 0!");
+        return;
+    }
     let budgets = JSON.parse(localStorage.getItem("budgets")) || [];
 
     const index = budgets.findIndex(b =>
@@ -165,6 +168,7 @@ function saveBudget() {
     localStorage.setItem("budgets", JSON.stringify(budgets));
 
     document.getElementById("budgetModal").style.display = "none";
+    input.value = "";
 
     updateDashboard();
 }
@@ -177,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentUser = getCurrentUser();
 
     if (!currentUser) {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
         return;
     }
 
@@ -198,29 +202,63 @@ function saveExpenses(data){
     localStorage.setItem("expenses", JSON.stringify(data));
 }
 const form = document.getElementById("addexpense");
-
+let editId = null;
 if(form){
     form.addEventListener("submit", function(e){
         e.preventDefault();
 
         const currentUser = getCurrentUser();
         let expenses = getExpenses();
-        const newExpense = {
-            id: Date.now(),
-            email: currentUser.email,   
-            category: document.getElementById("category").value,
-            amount: Number(document.getElementById("amount").value),
-            date: document.getElementById("date").value
-        };
+        
+        const amountValue = document.getElementById("amount").value;
+        const category = document.getElementById("category").value;
+        const amount = Number(document.getElementById("amount").value);
+        const date = document.getElementById("date").value;
+        const note = document.getElementById("note").value;
 
-        expenses.push(newExpense);
+        if (!category || !date || amountValue === "") {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        if (amount <= 0) {
+            alert("Số tiền chi tiêu phải lớn hơn 0!");
+            return; 
+        }
+
+        if(editId != null){
+            expenses = expenses.map(e => {
+                if(e.id === editId  && e.email === currentUser.email){
+                    e.category = document.getElementById("category").value;
+                    e.amount = Number(document.getElementById("amount").value);
+                    e.date = document.getElementById("date").value;
+                    e.note = document.getElementById("note").value; 
+                }
+                return e;
+            });
+
+                editId = null;
+                form.querySelector("button").textContent = "Thêm";
+        }
+        else{
+            const newExpense = {
+                id: Date.now(),
+                email: currentUser.email,   
+                category: document.getElementById("category").value,
+                amount: Number(document.getElementById("amount").value),
+                date: document.getElementById("date").value,
+                note: document.getElementById("note").value
+            };
+            expenses.push(newExpense);
+        }
         saveExpenses(expenses);
 
-        renderExpenses();
-        updateGoalUI();
-        drawChart();
-
+        editId = null;
         form.reset();
+        form.querySelector("button").textContent = "Thêm";
+        renderExpenses();
+        if (typeof updateGoalUI === "function") updateGoalUI();
+        if (typeof drawChart === "function") drawChart();
     });
 }
 const table = document.getElementById("expenseTable");
@@ -234,19 +272,22 @@ function renderExpenses(){
         .filter(e => e.email === currentUser.email);
 
     table.innerHTML = "";
-
+    let rows = "";
     expenses.forEach(e => {
-        table.innerHTML += `
+        rows += `
             <tr>
                 <td>${e.category}</td>
-                <td>${e.amount.toLocaleString()} đ</td>
+                <td>${Number(e.amount).toLocaleString()} đ</td>
                 <td>${e.date}</td>
+                <td>${e.note || "-"}</td>
                 <td>
-                    <button onclick="deleteExpense(${e.id})">Xóa</button>
+                    <button class="btn-sua" onclick="editExpense(${e.id})">Sửa</button>
+                    <button class="btn-xoa" onclick="deleteExpense(${e.id})">Xóa</button>
                 </td>
             </tr>
         `;
     });
+    table.innerHTML = rows;
 }
     //==============//    
         //DELETE//
@@ -261,6 +302,21 @@ function deleteExpense(id){
     renderExpenses();
     updateGoalUI();
     drawChart();
+}
+    //==============//
+        //EDIT//
+    //=============//
+    function editExpense(id){   
+    const expenses = getExpenses();
+    const expense = expenses.find(e => e.id === id);
+
+    document.getElementById("category").value = expense.category;
+    document.getElementById("amount").value = expense.amount;
+    document.getElementById("date").value = expense.date;
+    document.getElementById("note").value = expense.note || "";
+
+    editId = id;
+    form.querySelector("button").textContent = "Cập nhật";
 }
     //==============//
         //GOALS//
@@ -446,7 +502,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentUser = getCurrentUser();
 
     if (!currentUser) {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
         return;
     }
 
@@ -455,6 +511,4 @@ document.addEventListener("DOMContentLoaded", function () {
     renderExpenses();
     updateGoalUI();
     drawChart(); 
-
 });
-
