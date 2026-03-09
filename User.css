@@ -163,10 +163,12 @@ body{
     width: 300px;
 }
 .btn-cancel {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
     margin-top: 10px;
 }
+
+/
 .budget-card, .dot_menu {
     cursor: pointer;
 }
@@ -197,6 +199,7 @@ body{
     border-radius: 6px;
     transition: 0.3s;
 }
+
 .goBack:hover{
     background: #ff9a9e;
 }
@@ -233,6 +236,7 @@ table{
     border-collapse:collapse;
     margin-top: 15px;
 }
+
 th, td{
     padding:12px;
     text-align:center;
@@ -249,6 +253,66 @@ tbody tr:hover{
 th{
     background:#ffc2d1;
     color:white;
+}
+
+#note {
+    width: 200px;
+    min-height: 40px;
+    padding: 10px;
+    border: 1px solid #fce7f3; /* Màu hồng nhạt */
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: inherit;
+    resize: vertical; /* Cho phép kéo dãn chiều cao */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#note:focus {
+    border-color: #f472b6; /* Đậm hơn khi nhấn vào */
+    box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.1);
+}
+
+
+.btn-sua, .btn-xoa {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+
+.btn-sua {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #dbeafe;
+}
+
+.btn-sua:hover {
+    background-color: #dbeafe;
+    transform: translateY(-1px);
+}
+
+/* Nút Xóa: Màu đỏ nhạt */
+.btn-xoa {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fee2e2;
+}
+
+.btn-xoa:hover {
+    background-color: #fee2e2;
+    transform: translateY(-1px);
+}
+
+td:last-child {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
 }
 .content{
     display: flex;
@@ -268,12 +332,14 @@ th{
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     height: 500px;
 }
+
 .chart-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
+
 .chart-body{
     height: 350px;
 }
@@ -298,20 +364,24 @@ th{
     border-radius: 24px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
+
 .goal_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
+
 .goal_header h3 {
     font-size: 18px;
     font-weight: 600;
 }
+
 .dot_menu {
     color: #aaa;
     font-size: 20px;
 }
+
 .goal_row {
     display: flex;
     justify-content: space-between;
@@ -319,6 +389,7 @@ th{
     font-size: 14px;
     color: #555;
 }
+
 .progress_bar {
     height: 10px;
     background: #e8eaf6;
@@ -326,10 +397,12 @@ th{
     overflow: hidden;
     margin: 12px 0 18px;
 }
+
 .progress_bar.small {
     height: 8px;
     margin-top: 10px;
 }
+
 .progress_fill {
     height: 100%;
     width: 0%;
@@ -337,30 +410,35 @@ th{
     border-radius: 50px;
     transition: width 0.6s ease;
 }
+
 .goal_section_item {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 8px;
 }
+
 .bullet {
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
+
 .pink {
     background: #ff758c;
 }
+
 .blue {
     background: #6c8cff;
 }
+
 .big_money {
     font-size: 20px;
     font-weight: 600;
 }
+
 .percent_text {
     margin-top: 10px;
     font-weight: 600;
     color: #ff4f8b;
 }
-
