@@ -74,7 +74,7 @@ function login() {
             errorBox.style.color = "red";
             return; // Dừng hàm tại đây, không cho đăng nhập tiếp
         }
-        // -------------------------
+        
 
         // 2. Xác định quyền hạn (Role)
         const isAdmin = (email === "admin@gmail.com"); 
@@ -179,7 +179,7 @@ function register() {
 
     message.innerHTML = "Đăng ký thành công!";
     message.className = "message success";
-    setTimeout(() => { window.location.href = "login.html"; }, 1500);
+    setTimeout(() => { window.location.href = "index.html"; }, 1500);
 }
 
 // Hàm Login sửa lại
@@ -215,6 +215,7 @@ function login() {
         errorBox.innerText = "Email hoặc mật khẩu không đúng!";
     }
 }
+
 
 
 
