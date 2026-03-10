@@ -81,6 +81,24 @@
             border: 1px solid #ff4d4d !important;
             background-color: #fff5f5;
         }
+        .forgot-password-wrap {
+        text-align: right;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        }
+    
+        .forgot-password-wrap a {
+            color: #fb6f92;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        
+        .forgot-password-wrap a:hover {
+            color: #ff9a9e;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -97,8 +115,8 @@
             <label>Password</label>
             <input type="password" id="password" placeholder="Mật khẩu">
             <span class="error-msg" id="pass-error"></span>
-            <div style="text-align: right; margin-top: -10px; margin-bottom: 15px;">
-                <a href="forgot-password.html" style="color: #fb6f92; text-decoration: none; font-size: 13px;">Quên mật khẩu?</a>
+            <div class="forgot-password-wrap">
+                <a href="forgot-password.html">Quên mật khẩu?</a>
             </div>
         </div>
 
