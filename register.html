@@ -96,6 +96,18 @@ button:hover {
     color: #d67676;
     text-decoration: none;
 }
+.error-msg {
+    color: #ff4d4d;
+    font-size: 13px;
+    display: block;
+    margin-top: 5px;
+    min-height: 18px; 
+}
+
+input.invalid {
+    border: 1px solid #ff4d4d !important;
+    background-color: #fff5f5;
+}    
 </style>
 </head>
 
@@ -106,9 +118,11 @@ button:hover {
 
     <input type="text" id="fullname" placeholder="Họ và tên">
 
+    <input type="text" id="fullname" placeholder="Họ và tên">
+    <span class="error-msg" id="email-error"></span>
+    
     <input type="email" id="email" placeholder="Email">
-
-    <input type="password" id="password" placeholder="Mật khẩu">
+    <span class="error-msg" id="pass-error"></span>
 
     <input type="password" id="confirm" placeholder="Xác nhận mật khẩu">
 
@@ -131,3 +145,4 @@ button:hover {
 </body>
 
 </html>
+
