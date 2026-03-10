@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
     if (!currentUser) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
     }
 
@@ -73,4 +73,5 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Lỗi: Không tìm thấy người dùng trong hệ thống!");
         }
     });
+
 });
