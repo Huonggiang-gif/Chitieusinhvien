@@ -48,10 +48,11 @@ function resetPassword() {
 
         // Chuyển hướng về trang Login sau 2 giây
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }, 2000);
     } else {
         message.innerText = "Email này chưa được đăng ký trong hệ thống!";
         message.style.color = "#ff4d4d";
     }
+
 }
