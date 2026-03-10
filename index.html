@@ -69,6 +69,18 @@
             color: #d18ba3; /* Đậm hơn một chút khi di chuột vào */
             text-decoration: underline;
         }
+        .error-msg {
+            color: #ff4d4d;
+            font-size: 13px;
+            display: block;
+            margin-top: 5px;
+            min-height: 18px; 
+        }
+
+        input.invalid {
+            border: 1px solid #ff4d4d !important;
+            background-color: #fff5f5;
+        }
     </style>
 </head>
 <body>
@@ -78,11 +90,13 @@
         <div class="input-group">
             <label>Email</label>
             <input type="email" id="email" placeholder="Email">
+            <span class="error-msg" id="email-error"></span>
         </div>
 
         <div class="input-group">
             <label>Password</label>
-            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <span class="error-msg" id="pass-error"></span>
         </div>
 
         <button onclick="login()">Login</button>
