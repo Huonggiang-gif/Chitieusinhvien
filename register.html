@@ -96,6 +96,20 @@ button:hover {
     color: #d67676;
     text-decoration: none;
 }
+.input-group {
+    margin-bottom: 7px; 
+    text-align: left;
+    width: 100%;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 .error-msg {
     color: #ff4d4d;
     font-size: 13px;
@@ -107,24 +121,34 @@ button:hover {
 input.invalid {
     border: 1px solid #ff4d4d !important;
     background-color: #fff5f5;
-}    
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h2>Tạo tài khoản mới</h2>
+    <div class="container">
+        <h2>Tạo tài khoản mới</h2>
 
-    <input type="text" id="fullname" placeholder="Họ và tên">
-    
-    <input type="email" id="email" placeholder="Email">
-    <span class="error-msg" id="pass-error"></span>
+        <div class="input-group">
+            <input type="text" id="fullname" placeholder="Họ và tên">
+            <span class="error-msg" id="fullname-error"></span>
+        </div>
 
-    <input type="password" id="password" placeholder="Mật khẩu">
-    <span class="error-msg" id="pass-error"></span>
-    
-    <input type="password" id="confirm" placeholder="Xác nhận mật khẩu">
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Email">
+            <span class="error-msg" id="email-error"></span>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <span class="error-msg" id="pass-error"></span>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="confirm" placeholder="Xác nhận mật khẩu">
+            <span class="error-msg" id="confirm-error"></span>
+        </div>
 
     <div class="checkbox">
         <label>
@@ -138,13 +162,9 @@ input.invalid {
     <div id="message" class="message"></div>
 
     <div class="login-link">
-        Đã có tài khoản? <a href="index.html">Đăng nhập</a>
+        Đã có tài khoản? <a href="login.html">Đăng nhập</a>
     </div>
 </div>
 <script src="register_login.js"></script>
 </body>
-
 </html>
-
-
-
