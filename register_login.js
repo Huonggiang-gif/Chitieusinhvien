@@ -210,11 +210,12 @@ function login() {
         };
 
         localStorage.setItem("currentUser", JSON.stringify(userData));
-        window.location.href = isAdmin ? "admin.html" : "User.html";
+        window.location.href = isAdmin ? "Admin.html" : "User.html";
     } else {
         errorBox.innerText = "Email hoặc mật khẩu không đúng!";
     }
 }
+
 
 
 
