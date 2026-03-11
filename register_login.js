@@ -92,9 +92,9 @@ function login() {
         // 4. Chuyển hướng
         if (userData.role === "admin") {
             alert("Đăng nhập Admin thành công!");
-            window.location.href = "Admin.html"; 
+            window.location.href = "./Admin.html"; 
         } else {
-            window.location.href = "User.html";
+            window.location.href = "./User.html";
         }
 
     } else {
@@ -210,11 +210,12 @@ function login() {
         };
 
         localStorage.setItem("currentUser", JSON.stringify(userData));
-        window.location.href = isAdmin ? "Admin.html" : "User.html";
+        window.location.href = isAdmin ? "./Admin.html" : "./User.html";
     } else {
         errorBox.innerText = "Email hoặc mật khẩu không đúng!";
     }
 }
+
 
 
 
