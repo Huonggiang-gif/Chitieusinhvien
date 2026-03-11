@@ -181,7 +181,7 @@ body{
     padding: 20px;
     border-radius: 12px;
     min-width: 300px ;
-    height: auto;
+    height: 500px;
     margin-left: 0px;
 }
 .chart canvas{
@@ -472,3 +472,4 @@ td:last-child {
         padding: 15px; 
     }
 }
+
